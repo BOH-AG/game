@@ -1,8 +1,7 @@
 package src;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         game sus = new game();
-        sus.Game();
     }
 }
