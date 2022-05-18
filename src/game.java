@@ -19,26 +19,14 @@ public class game extends SPIEL {
 
     }
 
-    // w 22
-    //a 3
-    //s 18
-    //d 0
 
     @Override
     public void tasteReagieren(int key) {
         super.tasteReagieren(key);
-        if (key==22) {
-            player.verschiebenUm(0,-10);
-        }
-        if (key==3) {
-            player.verschiebenUm(10,0);
-        }
-        if (key==0) {
-            player.verschiebenUm(-10,0);
-        }
-        if (key==18) {
-            player.verschiebenUm(0,10);
-        }
+        if (key==22) player.verschiebenUm(0,-10); // w 22
+        if (key==3) player.verschiebenUm(10,0); //a 3
+        if (key==18) player.verschiebenUm(0, 10); //s 18
+        if (key==0) player.verschiebenUm(-10,0); //d 0
 
     }
 
