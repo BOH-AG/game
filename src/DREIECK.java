@@ -1,3 +1,4 @@
+package src;
 import ea.edu.DreieckE;
 import ea.Raum;
 

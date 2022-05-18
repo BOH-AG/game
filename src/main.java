@@ -1,10 +1,10 @@
 package src;
-
-import ea;
+import ea.*;
 
 class main {
-    DREIECK player;
+    static DREIECK player;
     public static void main(String[] args) {
+
         player = new DREIECK();
     }
 }
