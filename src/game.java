@@ -2,6 +2,8 @@ package src;
 import ea.TastenLosgelassenReagierbar;
 import ea.edu.AnzeigeE;
 import ea.edu.SPIEL;
+import ea.Game;
+
 
 public class game extends SPIEL {
     AnzeigeE window;
@@ -11,6 +13,7 @@ public class game extends SPIEL {
         player = new DREIECK();
         player.setzeSichtbar(true);
         tickerStarten(100);
+        window.tastenReagierbarAnmelden();
     }
 
     @Override
@@ -29,6 +32,10 @@ public class game extends SPIEL {
         if (key==0) player.verschiebenUm(-10,0); //d 0
 
     }
+    
+
+
+
 
 
 }
