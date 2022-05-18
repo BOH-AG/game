@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Engine.Alpha">
+  <library name="engine-alpha">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Engine.Alpha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/+libs/engine-alpha.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
