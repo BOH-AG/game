@@ -3,12 +3,12 @@ import ea.*;
 
 public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
     player p1;
-    Bild sussyicon;
+    Bild icon;
     Maus diesendungmitder;
 
     public game() {
         super(1280, 720, "Neu Köln Simulator");
-        sussyicon = new Bild("rsc/disc.png");
+        icon = new Bild("rsc/disc.png");
         diesendungmitder = new Maus(Maus.TYPE_FADENKREUZ);
         Punkt top;
         Punkt bl;
@@ -19,7 +19,7 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
                 br = new Punkt(125f, 150f)
         );
         wurzel.add(p1);
-        iconSetzen(sussyicon);
+        iconSetzen(icon);
         mausAnmelden(diesendungmitder);
         tastenReagierbarAnmelden(this);
         tastenLosgelassenReagierbarAnmelden(this);
