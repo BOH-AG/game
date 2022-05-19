@@ -1,15 +1,22 @@
 package src;
 import ea.*;
+import ea.Maus;
 
 public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
     player p1;
     Bild icon;
-    Maus diesendungmitder;
+    mouse diesendungmitder;
+    Strich tracer;
 
     public game() {
         super(1280, 720, "Neu Köln Simulator");
         icon = new Bild("rsc/disc.png");
-        diesendungmitder = new Maus(Maus.TYPE_FADENKREUZ);
+        Bild mice1;
+        Punkt mice;
+        diesendungmitder = new mouse(
+                mice1 = new Bild("rsc/crosshair2.png"),
+                mice = new Punkt(16, 16)
+        );
         Punkt top;
         Punkt bl;
         Punkt br;
@@ -24,6 +31,7 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         tastenReagierbarAnmelden(this);
         tastenLosgelassenReagierbarAnmelden(this);
         tickerAnmelden(this, 17);
+
     }
 
     @Override
@@ -33,6 +41,10 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
 
     public void tick() {
         pmove(p1);
+        if (diesendungmitder.actual) {
+            Punkt pnt = p1.mittelPunkt();
+            shoot(p1.mittelPunkt(), diesendungmitder.clicked);
+        }
     }
 
     public void pmove(player p) {
@@ -51,6 +63,17 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         else direction[3] = false;
 
         p.move(direction);
+    }
+
+    public Punkt test() {
+        return p1.mittelPunkt();
+    }
+
+    void shoot(Punkt pp, Punkt ppp) {
+        tracer = new Strich(pp, ppp);
+        tracer.farbeSetzen("Gelb");
+        warten(17);
+        tracer.loeschen();
     }
 
 }
