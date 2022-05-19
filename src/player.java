@@ -10,13 +10,7 @@ public class player extends Dreieck {
         farbeSetzen("Rot");
         speed = 2;
     }
-
-    //      /\ 1
-    //   8\    / 2
-    //   7<     > 3   directions
-    //   6/    \ 4
-    //      \/ 5
-
+    
     public void move(boolean[] d) { //d = direction
         if (d[1]) {
             verschieben(-speed, 0);
