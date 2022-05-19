@@ -35,26 +35,20 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         pmove(p1);
     }
 
-
-
     public void pmove(player p) {
         boolean[] direction = new boolean[4];
 
-        if (tasteGedrueckt(Taste.W)) {
-            direction[0] = true;
-        } else {direction[0] = false;}
+        if (tasteGedrueckt(Taste.W)) direction[0] = true;
+        else direction[0] = false;
 
-        if (tasteGedrueckt(Taste.A)) {
-            direction[1] = true;
-        } else {direction[1] = false;}
+        if (tasteGedrueckt(Taste.A)) direction[1] = true;
+        else direction[1] = false;
 
-        if (tasteGedrueckt(Taste.S)) {
-            direction[2] = true;
-        } else {direction[2] = false;}
+        if (tasteGedrueckt(Taste.S)) direction[2] = true;
+        else direction[2] = false;
 
-        if (tasteGedrueckt(Taste.D)) {
-            direction[3] = true;
-        } else {direction[3] = false;}
+        if (tasteGedrueckt(Taste.D)) direction[3] = true;
+        else direction[3] = false;
 
         p.move(direction);
     }
