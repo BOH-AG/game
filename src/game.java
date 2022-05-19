@@ -2,7 +2,7 @@ package src;
 import ea.*;
 
 public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
-
+    int degMain = 0;
     Dreieck player;
     Bild sussyicon;
     Maus diesendungmitder;
@@ -30,17 +30,44 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
     public void tasteLosgelassen(int code) {}
 
     public void tick() {
-        if(tasteGedrueckt(Taste.W)) {
-            player.verschieben(0, -4);
-        }
+        move();
+    }
+
+    public void move(){
+
         if(tasteGedrueckt(Taste.D)) {
             player.verschieben(4, 0);
+            player.drehenAbsolut(90);
         }
-        if(tasteGedrueckt(Taste.S)) {
-            player.verschieben(0, 4);
-        }
+
+
         if(tasteGedrueckt(Taste.A)) {
             player.verschieben(-4, 0);
+            player.drehenAbsolut(270);
         }
+
+
+        if(tasteGedrueckt(Taste.W)) {
+            player.verschieben(0, -4);
+            player.drehenAbsolut(0);
+            if (tasteGedrueckt(Taste.D)){
+                player.drehenAbsolut(45);
+            }if (tasteGedrueckt(Taste.A)) {
+                player.drehenAbsolut(315);
+            }
+        }
+
+
+
+        if(tasteGedrueckt(Taste.S)) {
+            player.verschieben(0, 4);
+            player.drehenAbsolut(180);
+            if (tasteGedrueckt(Taste.D)){
+                player.drehenAbsolut(135);
+            }if (tasteGedrueckt(Taste.A)) {
+                player.drehenAbsolut(225);
+            }
+        }
+
     }
 }

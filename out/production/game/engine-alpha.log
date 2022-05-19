@@ -1,1 +1,1 @@
-[Wed May 18 22:19:19 CEST 2022][ERROR] Das Bild konnte nicht geladen werden: disc.png (ImageLoader.java:51)
+[Thu May 19 10:33:47 CEST 2022][ERROR] Der Eingabe-Parameter g leitet sich von der Klasse Game ab. Das würde für einen internen Fehler sorgen und ist daher nicht möglich. Stattdessen kann man die tasteReagieren-Methode verwenden oder über eine andere mit diesem Interface den selben Effekt erzeugen. (Game.java:562)

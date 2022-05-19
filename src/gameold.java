@@ -1,4 +1,4 @@
-package src;
+/*package src;
 import ea.TastenLosgelassenReagierbar;
 import ea.edu.AnzeigeE;
 import ea.edu.FensterE;
@@ -7,7 +7,7 @@ import ea.Game;
 import ea.internal.gui.Fenster;
 
 
-public class game extends SPIEL {
+public class game1 extends SPIEL {
     FensterE window;
     Keys k = new Keys();
     //DREIECK player;
@@ -19,14 +19,14 @@ public class game extends SPIEL {
         window.tastenReagierbarAnmelden(k);
     }
 
-   /*Override
+   Override
     public void tick() {
         super.tick();
 
-    }*/
+    }
 
 
-    /*@Override
+    @Override
     public void tasteReagieren(int key) {
         super.tasteReagieren(key);
         if (key==22) player.verschiebenUm(0,-10); // w 22
@@ -34,7 +34,7 @@ public class game extends SPIEL {
         if (key==18) player.verschiebenUm(0, 10); //s 18
         if (key==0) player.verschiebenUm(-10,0); //d 0
 
-    }*/
+    }
     
 
 
@@ -42,3 +42,4 @@ public class game extends SPIEL {
 
 
 }
+*/
