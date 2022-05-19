@@ -32,38 +32,31 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
     public void tasteLosgelassen(int code) {}
 
     public void tick() {
-        move();
+        pmove(p1);
     }
 
-    public void move(){
-
-        if(tasteGedrueckt(Taste.D)) {
-            p1.verschieben(2, 0);
-            p1.drehenAbsolut(90);
-        }
 
 
-        if(tasteGedrueckt(Taste.A)) {
-            p1.verschieben(-2, 0);
-            p1.drehenAbsolut(270);
-        }
+    public void pmove(player p) {
+        boolean[] direction = new boolean[4];
 
+        if (tasteGedrueckt(Taste.W)) {
+            direction[0] = true;
+        } else {direction[0] = false;}
 
-        if(tasteGedrueckt(Taste.W)) {
-            p1.verschieben(0, -2);
-            p1.drehenAbsolut(0);
-            if (tasteGedrueckt(Taste.D)) p1.drehenAbsolut(45);
-            if (tasteGedrueckt(Taste.A)) p1.drehenAbsolut(315);
+        if (tasteGedrueckt(Taste.A)) {
+            direction[1] = true;
+        } else {direction[1] = false;}
 
-        }
+        if (tasteGedrueckt(Taste.S)) {
+            direction[2] = true;
+        } else {direction[2] = false;}
 
-        
-        if(tasteGedrueckt(Taste.S)) {
-            p1.verschieben(0, 2);
-            p1.drehenAbsolut(180);
-            if (tasteGedrueckt(Taste.D)) p1.drehenAbsolut(135);
-            if (tasteGedrueckt(Taste.A)) p1.drehenAbsolut(225);
-        }
+        if (tasteGedrueckt(Taste.D)) {
+            direction[3] = true;
+        } else {direction[3] = false;}
 
+        p.move(direction);
     }
+
 }
