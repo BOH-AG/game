@@ -31,7 +31,7 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         tastenReagierbarAnmelden(this);
         tastenLosgelassenReagierbarAnmelden(this);
         tickerAnmelden(this, 17);
-
+        rechenintensiveArbeitSetzen(false); // macht alles viel flüssiger
     }
 
     @Override
@@ -74,6 +74,7 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         tracer.farbeSetzen("Gelb");
         warten(17);
         tracer.loeschen();
+
     }
 
 }
