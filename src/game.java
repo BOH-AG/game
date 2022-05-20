@@ -41,10 +41,7 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
 
     public void tick() {
         pmove(p1);
-        if (diesendungmitder.actual) {
-            Punkt pnt = p1.mittelPunkt();
-            shoot(p1.mittelPunkt(), diesendungmitder.clicked);
-        }
+        shoot();
     }
 
     public void pmove(player p) {
@@ -69,12 +66,14 @@ public class game extends Game implements TastenLosgelassenReagierbar, Ticker {
         return p1.mittelPunkt();
     }
 
-    void shoot(Punkt pp, Punkt ppp) {
-        tracer = new Strich(pp, ppp);
-        tracer.farbeSetzen("Gelb");
-        warten(17);
-        tracer.loeschen();
-
+    void shoot() {
+        try {
+            tracer.loeschen();
+        } catch (Exception ignored) {}
+        if (diesendungmitder.actual) {
+            Punkt pnt = p1.mittelPunkt();
+            tracer = new Strich(pnt, diesendungmitder.clicked);
+            tracer.farbeSetzen("Gelb");
+        }
     }
-
 }
