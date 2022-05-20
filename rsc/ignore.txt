@@ -1,0 +1,23 @@
+double su;
+        double suu;
+        double suuu;
+        if (pp.x > ppp.x) su = pp.x-ppp.x;
+        else su = ppp.x-pp.x;
+        if (pp.y > ppp.y) suu = pp.y-ppp.y;
+        else suu = ppp.y-pp.y;
+        suuu = Math.pow(
+                Math.pow(su, 2)+Math.pow(suu, 2),
+                0.5
+        );
+        System.out.println(suuu);
+
+        Rechteck balls = new Rechteck(
+                ((pp.x-ppp.x)/-2)+pp.x,
+                ((pp.y-ppp.y)/-2)+pp.y,
+                (float) suuu,
+                5
+        );
+
+        wurzel.add(balls);
+        balls.sichtbarSetzen(true);
+        balls.farbeSetzen("Blau");
